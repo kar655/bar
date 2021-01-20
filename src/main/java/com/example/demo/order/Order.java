@@ -17,7 +17,7 @@ public class Order {
     private Long id;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE)
     private List<Item> items;
 
     public Order() {

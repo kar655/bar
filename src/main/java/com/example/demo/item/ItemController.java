@@ -33,11 +33,11 @@ public class ItemController {
     }
 
     @PutMapping("/{id}")
-    public Item updateItem(@PathVariable Long id, @RequestBody Item newItem) {
+    public Item updateItem(@PathVariable Long id,
+                           @RequestBody String description) {
         Item item = itemRepository.findById(id).orElseThrow();
 
-        item.setOrder(newItem.getOrder());
-        item.setDescription(newItem.getDescription());
+        item.setDescription(description);
 
         return itemRepository.save(item);
     }
