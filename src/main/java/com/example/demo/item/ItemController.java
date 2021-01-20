@@ -31,4 +31,14 @@ public class ItemController {
     public void deleteItem(@PathVariable Long id) {
         itemRepository.deleteById(id);
     }
+
+    @PutMapping("/{id}")
+    public Item updateItem(@PathVariable Long id, @RequestBody Item newItem) {
+        Item item = itemRepository.findById(id).orElseThrow();
+
+        item.setOrder(newItem.getOrder());
+        item.setDescription(newItem.getDescription());
+
+        return itemRepository.save(item);
+    }
 }

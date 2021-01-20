@@ -23,9 +23,6 @@ public class DemoApplication {
             Order order = new Order();
             orderRepository.save(order);
 
-//            itemRepository.save(new Item("Apple"));
-//            itemRepository.save(new Item("Banana"));
-//            itemRepository.save(new Item("Watermelon"));
             itemRepository.save(new Item("Apple", order));
             itemRepository.save(new Item("Banana", order));
             itemRepository.save(new Item("Watermelon", order));

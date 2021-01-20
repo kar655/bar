@@ -10,7 +10,9 @@ import javax.persistence.*;
 public class Item {
     @Id
     @SequenceGenerator(name = "items_sequence")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "items_sequence")
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "items_sequence")
     private Long id;
 
     @Column(nullable = false)
@@ -59,29 +61,4 @@ public class Item {
         this.description = description;
         this.order = order;
     }
-
-//    public Item(String description) {
-//        this.description = description;
-//    }
-//
-//    public Item(Long id, String description) {
-//        this.id = id;
-//        this.description = description;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String description) {
-//        this.description = description;
-//    }
 }

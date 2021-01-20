@@ -10,7 +10,10 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "orders_sequence")
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "orders_sequence")
     private Long id;
 
     @JsonManagedReference
